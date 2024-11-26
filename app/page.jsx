@@ -1,25 +1,21 @@
-import './globals.css'
-import Container from '@/components/Container'
+/**
+
+Renders a Next.js page component that displays a grid of character avatars with links to individual character pages.
+@component
+@returns {JSX.Element} The rendered page component.
+*/
+
+import { Container } from '@/components'
 import Image from 'next/image'
 import Link from 'next/link'
-
-async function getAllCharacters() {
-  const endpoint = 'http://localhost:3000/api'
-  const data = await fetch(`${endpoint}/characters`)
-
-  if (!data.ok) {
-    throw new Error('Failed to fetch data')
-  }
-
-  return data.json()
-}
+import { getAllCharacters } from '@/lib/characters'
 
 export default async function Page() {
   const data = await getAllCharacters()
 
   return (
     <main>
-      <div className="grid grid-cols-2 gap-1 py-5 md:grid-cols-3 lg:grid-cols-4">
+      <Container className="grid grid-cols-2 gap-1 py-5 md:grid-cols-3 lg:grid-cols-4">
         {data?.characters?.map(item => {
           return (
             <Link
@@ -37,7 +33,7 @@ export default async function Page() {
             </Link>
           )
         })}
-      </div>
+      </Container>
     </main>
   )
 }
