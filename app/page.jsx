@@ -5,10 +5,10 @@ Renders a Next.js page component that displays a grid of character avatars with 
 @returns {JSX.Element} The rendered page component.
 */
 
-import { Container } from '@/components'
+import { Container } from '../components'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getAllCharacters } from '@/lib/characters'
+import { getAllCharacters } from '../lib/characters'
 
 export default async function Page() {
   const data = await getAllCharacters()

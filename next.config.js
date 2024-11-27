@@ -8,6 +8,13 @@ const nextConfig = {
       },
     ],
   },
+  compilerOptions: {
+    baseUrl: '.',
+    paths: {
+      '@/*': ['*'],
+      '@/components/*': ['components/*'],
+    },
+  },
 }
 
 module.exports = nextConfig

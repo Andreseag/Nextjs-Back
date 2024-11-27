@@ -4,8 +4,8 @@ Renders a Next.js page component that displays a quiz introduction with an image
 @returns {JSX.Element} The rendered page component.
 */
 
-import { Container } from '@/components'
-import { getRandomQuizQuestion } from '@/lib/quiz'
+import { Container } from '../../components'
+import { getRandomQuizQuestion } from '../../lib/quiz'
 import Image from 'next/image'
 import Link from 'next/link'
 import { TbArrowBigRightFilled } from 'react-icons/tb'
